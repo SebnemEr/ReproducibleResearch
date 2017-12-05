@@ -1,0 +1,296 @@
+---
+title: "Reproducible Research"
+author: 
+- \c Sebnem Er
+institute:
+- University of Cape Town, Statistical Sciences Department
+- Sebnem.Er@uct.ac.za
+date: "`r format(Sys.time(), '%B %d, %Y')`"
+output:
+  beamer_presentation:
+    keep_tex: true
+#    toc: true
+    includes:
+      in_header: C:/Users/01438475/Google Drive/UCTcourses/DataScience/AIMSworkshop/templates/header.tex
+#    theme: Warsaw
+#    colortheme: dolphin
+#    toc: true
+#    slide_level: 3
+citation_package: natbib
+fig_caption: false
+---
+
+
+
+## Examples from my own experiences: Documentation
+\begin{center}
+  \includegraphics[height=35mm, width=85mm]{images/example3.png}
+\end{center}
+
+## Examples from my own experiences: Documentation
+\includegraphics[width=1.00\textwidth]{images/example1.png}
+
+## Examples from my own experiences: Documentation
+\includegraphics[width=1.00\textwidth]{images/example2.png}
+
+## Examples from my own experiences: Documentation
+\includegraphics[width=1.00\textwidth]{images/example4.png}
+
+## Examples from my own experiences: Documentation
+\includegraphics[width=1.00\textwidth]{images/example5.png}
+
+## Examples from others: Data
+\includegraphics[width=.65\textwidth]{images/filenames1.png}
+\includegraphics[width=.45\textwidth]{images/filenames2.png}
+
+
+## Examples from others: Code
+\includegraphics[width=1.00\textwidth]{images/workreproduce.jpg}
+
+## What did I do with the missing observations?: Data
+\includegraphics[width=1.00\textwidth]{images/example8.png}
+
+## Examples from my own research: Storage
+\includegraphics[width=1.00\textwidth]{images/example6.png}
+
+## Examples from my own research: Storage
+\includegraphics[width=1.00\textwidth]{images/example7.png}
+
+## Why Should Research be Reproducible?
+In all of these examples, you will see problems from
+
+- Researchers/Collaborators
+- Students
+- Instructors
+- Editors
+- Private Sector Researchers
+- Others who want to access your data and repeat what you have done
+
+point of view. Everyone is affected.
+
+## What is Reproducible Research?
+Science, according to the American Physical Society, ``is the systematic enterprise of gathering knowledge, organizing and condensing that knowledge into testable laws and theories.''
+
+\pause
+
+How do we evaluate scientific claims?
+
+\pause
+
+Replication
+
+Same results again and again --> findings are relevant
+
+<!The ``ultimate standard'' for evaluating these scientific claims is whether or not the claims can be replicated (Peng, 2011; Kelly, 2006). Replication, the practice of independently implementing scientific
+experiments to validate specific findings, is the cornerstone of discovering
+scientific truth. If the results of another replication provide the same results again and again then we can be sure that the findings are relevant.>
+
+
+<!Research findings cannot even really be considered "genuine contribution[s] to
+human knowledge" until they have been verified through replication (Stodden,
+2009b, 38).>
+
+\pause
+However, replication ``requires the complete and open exchange of data, procedures, and materials''. We cannot replicate many scientific research, due to time, money or uniqueness of the research.
+
+## What do we do if we cannot replicate?
+Then what do we do? We can have a middle ground and deploy reproducible research instead, which is the calculation of quantitative scientific results by independent scientists using the
+original datasets and methods. 
+
+\pause
+
+<!Scientific conclusions that are not replicable should be abandoned or modified when confronted with more complete or reliable evidence >
+
+
+<!Reproducibility has become an important issue for
+more recent research due to advances in technology and the rapid spread of
+computational methods across the research landscape.>
+\bigskip
+
+- What are the advantages of Reproducible Research?
+\pause
+
+    + Better work habits
+    + Better team work
+    + Changes are easier
+    + Higher research impact
+    
+\bigskip
+\pause
+- What tools can we use for RR?
+
+
+
+## Tools for Reproducible Research (RR)?
+- Before explaning the tools used for RR, what is the life cycle of a research?
+    + Data collection
+    + Data cleaning
+    + Statistical analysis
+    + Presentation of results/documentation/editing
+
+For every step of your research, you need a tool for RR. Everything in one script.
+
+## Practical Tips for Reproducible Research (RR)
+1. Document everything!,
+2. Everything in a script file,
+3. All files should be human readable: Literate Programming,
+4. Explicitly tie your files together: data, codes, pdf output etc.,
+5. Have a plan to organize, store, and make your files available.
+
+Using these tips will help make your computational research really reproducible.
+
+## 1. Document everything
+
+Ideally, you should tell your readers how you
+
+- gathered your data,
+- analyzed it, and
+- presented the results.
+- a key part of documenting with R is that you should record your session info:
+
+ 
+```{r eval=FALSE}
+sessionInfo()
+```
+
+## Session Info
+
+\includegraphics[width=1.00\textwidth]{images/versioncontrol.png}
+    
+## 2. Everything is a script file
+
+- .R file
+- .txt file
+- .Rmd file
+- .m file
+
+etc.
+
+## 3. All files should be human readable
+
+Treat all of your research files as if someone who has not worked on the project will, in the future, try to understand them.
+
+\pause
+
+**\textcolor{blue}{including yourself!}**
+
+\pause
+With this in mind it is a good idea to comment frequently.
+\pause
+
+*Commenting Guidelines*
+
+- write a comment before a block of code describing what the code does,
+- comment on any line of code that is ambiguous
+
+
+
+## Tools for Reproducible Research (RR)?
+- **R**: First step is to prepare your research in an environment where you can type your code and the machine can convert the code into analysis, in between you can leave comments what each code is doing.
+\pause
+- **RStudio**: RStudio allows you to do all of the things R can do. It is a happy medium between R's text-based interface and a pure GUI and it can be linked to numerous reproducible research publishing environments such as LaTeX.
+\pause
+- **knitr**: an R package for literate programming, i.e. it allows you to combine your statistical analysis and the presentation of the results into one document. Yihui Xie is the developer. see: https://yihui.name/knitr/
+
+## Tools for Reproducible Research (RR)?
+- **R Markdown**: One of the document formats that knitr supports, and it is also the simplest one. Markdown is a both easy-to-read and easy-to-write language.
+\pause
+- **Cloud storage & versioning**: Services such as Dropbox and Git/Github that can store data, code, and presentation files, save previous versions of these files, and make this information widely available.
+\pause
+- **Unix-like shell programs**: These tools are useful for working with large research projects.
+
+## Knitr and R Markdown
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document.
+
+```{r pressurefig, fig.cap=paste("Scatterplot of Pressure vs Temperature"), out.width = '50%', fig.align = "center"}
+plot(pressure)
+```
+
+## Knitr and R Markdown
+
+```{r}
+# Fit simple linear regression model
+M1 <- lm(Examination ~ Education, data = swiss)
+```
+
+```{r, results='asis', echo=FALSE}
+# Load xtable
+library(xtable)
+# Create an xtable object from M1
+M1Table <- xtable(M1, caption = "Linear Regression, Dependent
+Variable: Exam Score",
+label = "BasicXtableSummary",
+digits = 1)
+# Create HTML summary table of M1Table
+print.xtable(M1Table, type = "latex", caption.placement = "top")
+```
+
+This was created with \textbf{\textsf{xtable}} package. For multiple tables, you can use \textbf{\textsf{apsrtable}} package in \textbf{\textsf{R}}.
+
+## Cloud Storage and Versioning
+
+We need to be able to access our files from multiple devices in different locations. 
+
+\pause
+We often need a way for our collaborators to access and edit research files as well.
+
+\pause
+When working on a collaborative project, one of the authors may accidentally delete something in a file that
+another author needed.
+
+\pause
+To deal with these issues we need to store our data in a system that has version control. 
+
+\pause
+Version control systems keep track of changes we make to our files and allows us to access previous versions if we want to.
+
+
+## Git/Github
+
+At the heart of \textcolor{blue}{GitHub} is an open source version control system (VCS) called \textcolor{blue}{Git}. Git is responsible for everything GitHub-related that happens locally on your computer.
+
+\pause
+To use Git on the command line, you'll need to download, install, and configure Git on your computer.
+
+\pause
+If you want to work with Git locally, but don't want to use the command line, you can instead download and install the GitHub Desktop client.
+
+\pause
+If you don't need to work with files locally, GitHub lets you complete many Git-related actions directly in the browser, including:
+
+\pause
+- Creating a repository
+- Forking a repository
+- Managing files
+- Being social
+
+## Github Desktop Client
+\begin{center}
+  \includegraphics[width=.8\textwidth]{images/githubfront.png}
+\end{center}
+
+https://desktop.github.com/
+
+## References
+
+[Christopher Gandrud (2014). Reproducible Research with R and RStudio, CRC Press.](https://github.com/christophergandrud/Rep-Res-Book)
+
+[Victoria Stodden, Friedrich Leisch, Roger Peng (2014). Implementing Reproducible Research. CRC Press.](https://www.jstatsoft.org/article/view/v061b02/v61b02.pdf)
+
+[Yihui Xie. Dynamic Documents with R and knitr, CRC Press](https://yihui.name/knitr/)
+
+You can start looking at this cheat sheet: \textcolor{blue}{https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf.}
+
+For more details on using R Markdown see \textcolor{blue}{http://rmarkdown.rstudio.com.}
+
+How to setup Github using web: \textcolor{blue}{https://dannguyen.github.io/github-for-portfolios/lessons/setup-github/.}
+
+For more details on using R Markdown see \textcolor{blue}{http://rmarkdown.rstudio.com.}
+
+  
+## Calvin and Hobbes
+\includegraphics[width=.6\textwidth]{images/calvinhobbes1.png}
+
+## Thank you...
+\textcolor{blue}{https://sebnemer.github.io/}
